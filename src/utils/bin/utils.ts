@@ -1,10 +1,16 @@
 import packageJson from '../../../package.json';
 import * as bin from './index';
+import config from '../../../config.json'
 
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
 
-  return `Available commands:\n${commands}\n\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.`;
+  return `Available commands:
+    ${commands}
+
+  [Tab]: trigger completion.
+  [ctrl+l]: clear terminal.
+  [ctrl+c]: cancel command.`;
 };
 
 export const echo = async (args: string[]): Promise<string> => {
@@ -12,35 +18,34 @@ export const echo = async (args: string[]): Promise<string> => {
 };
 
 export const whoami = async (args: string[]): Promise<string> => {
-  return 'guest';
+  return 'blank-manash';
 };
 
 export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-export const gui = async (args: string[]): Promise<string> => {
-  window.open('https://m4tt72.com', '_self');
+export const blog = async (args: string[]): Promise<string> => {
+  window.open('https://blank-manash.github.io/blog/', '_self');
 
-  return 'Opening GUI version...';
+  return 'Opening Blog version...';
 };
 
 export const email = async (args: string[]): Promise<string> => {
-  window.open('mailto:hi@nm4tt72.com');
-
-  return 'Opening mailto:hi@m4tt72.com...';
+  window.open(`mailto:${config.email}`);
+  return `Opening ${config.email}....`
 };
 
 export const vi = async (args: string[]): Promise<string> => {
-  return `why use vi? try 'emacs'.`;
+  return `Why use vim? Try 'emacs'.`;
 };
 
 export const vim = async (args: string[]): Promise<string> => {
-  return `why use vim? try 'emacs'.`;
+  return `Why use vim? Try 'emacs'.`;
 };
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `really? emacs? you should be using 'vim'`;
+  return `Really? Emacs? You should be using 'vim'`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
@@ -48,12 +53,13 @@ export const sudo = async (args?: string[]): Promise<string> => {
     window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
   }, 1000);
 
-  return `Permission denied: unable to run the command '${args[0]}' as root.`;
+  return `Permission denied: unable to run the command '${args[0]}' as root.
+    This incident will be reported, LOL`;
 };
 
 export const repo = async (args?: string[]): Promise<string> => {
   setTimeout(function () {
-    window.open('https://github.com/m4tt72/terminal', '_blank');
+    window.open('https://github.com/blank-manash/terminal-website', '_blank');
   }, 1000);
 
   return 'Opening repository...';
@@ -67,20 +73,23 @@ export const donate = async (args?: string[]): Promise<string> => {
 
 export const banner = (args?: string[]): string => {
   return `
-███╗   ███╗██╗  ██╗████████╗████████╗███████╗██████╗
-████╗ ████║██║  ██║╚══██╔══╝╚══██╔══╝╚════██║╚════██╗
-██╔████╔██║███████║   ██║      ██║       ██╔╝ █████╔╝
-██║╚██╔╝██║╚════██║   ██║      ██║      ██╔╝ ██╔═══╝
-██║ ╚═╝ ██║     ██║   ██║      ██║      ██║  ███████╗
-╚═╝     ╚═╝     ╚═╝   ╚═╝      ╚═╝      ╚═╝  ╚══════╝ v${packageJson.version}
+=============================================================
+ 
+ █████     ████                       █████                                                                        █████     
+░░███     ░░███                      ░░███                                                                        ░░███      
+ ░███████  ░███   ██████   ████████   ░███ █████            █████████████    ██████   ████████    ██████    █████  ░███████  
+ ░███░░███ ░███  ░░░░░███ ░░███░░███  ░███░░███  ██████████░░███░░███░░███  ░░░░░███ ░░███░░███  ░░░░░███  ███░░   ░███░░███ 
+ ░███ ░███ ░███   ███████  ░███ ░███  ░██████░  ░░░░░░░░░░  ░███ ░███ ░███   ███████  ░███ ░███   ███████ ░░█████  ░███ ░███ 
+ ░███ ░███ ░███  ███░░███  ░███ ░███  ░███░░███             ░███ ░███ ░███  ███░░███  ░███ ░███  ███░░███  ░░░░███ ░███ ░███ 
+ ████████  █████░░████████ ████ █████ ████ █████            █████░███ █████░░████████ ████ █████░░████████ ██████  ████ █████
+░░░░░░░░  ░░░░░  ░░░░░░░░ ░░░░ ░░░░░ ░░░░ ░░░░░            ░░░░░ ░░░ ░░░░░  ░░░░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░░  ░░░░ ░░░░░ 
+                                                                                                                             
+                                                                                                              
+=============================================================
 
-Type 'help' to see list of available commands.
-
---
-The project is open-source 🎉 type 'repo' to check out the repository.
-
-New 🎉: Try out the new 'theme' command. See all available themes <a href="https://github.com/m4tt72/terminal/tree/master/docs/themes">in the docs</a>.
-New 🎉: New command 'neofetch', for you linux.
---
-`;
+Welcome to my terminal Repository.
+This website holds as frontend for me to share all my computing ideas that always were in my mind.
+Type :help for a list of commands that can be executed
+------ 
+`
 };

@@ -1,10 +1,11 @@
 {
-  "bioUrl": "https://raw.githubusercontent.com/m4tt72/m4tt72/master/README.md",
+  "bioUrl": "",
   "social": {
-    "instagram": "m4tt72",
-    "github": "m4tt72",
-    "linkedin": "yassinefathi"
+    "instagram": "blank_manash",
+    "github": "blank-manash",
+    "linkedin": "manash-baul-bb084b167"
   },
-  "theme": "gruvboxdark",
-  "border": true
+  "email": "mximpaid@gmail.com",
+  "theme": "azu",
+  "border": false
 }

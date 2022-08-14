@@ -11,7 +11,6 @@ export const getProjects = async () => {
 
 export const getBio = async () => {
   const { data } = await axios.get(config.bioUrl);
-
   return data;
 };
 
