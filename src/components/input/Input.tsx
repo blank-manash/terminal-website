@@ -5,7 +5,6 @@ import { useShell } from '../../utils/shellProvider';
 import { handleTabCompletion } from '../../utils/tabCompletion';
 import { useTheme } from '../../utils/themeProvider';
 import { Ps1 } from '../ps1';
-
 export const Input = ({ inputRef, containerRef }) => {
   const { trackEvent } = useMatomo();
   const { theme } = useTheme();
